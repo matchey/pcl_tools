@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="topic" default="/pointcloud/fromPCD" />
+	
+	<node pkg="pcl_tools" type="pcd2rviz" name="pcd2rviz" >
+		<param name="topic_name_pub" value="$(arg topic)" />
+	</node>
+
+	<node pkg="rviz" type="rviz" name="rviz" args="-d ~/.rviz/fromPCD.rviz" output="screen" />
+
+</launch>
